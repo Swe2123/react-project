@@ -1,103 +1,133 @@
-import Image from "next/image";
+'use client'
 
-export default function Home() {
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom"
+import Image from 'next/image';
+
+// Your pages
+import About from '../pages/About.jsx'
+import Description from '../pages/Description.jsx'
+import Projects from '../pages/Projects.jsx'
+import Qualifications from '../pages/Qualifications.jsx'
+
+const navigation = [
+  { name: 'About', href: '/' },
+  { name: 'Description', href: '/description' },
+  { name: 'Projects', href: '/projects' },
+  { name: 'Qualifications', href: '/qualifications' },
+]
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
+
+function Navbar() {
+  const location = useLocation() 
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <Disclosure as="nav" className="relative bg-gray-800 dark:bg-gray-800/50 dark:after:pointer-events-none dark:after:absolute dark:after:inset-x-0 dark:after:bottom-0 dark:after:h-px dark:after:bg-white/10">
+      {({ open }) => (
+        <>
+          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+            <div className="relative flex h-16 items-center justify-between">
+              {/* Mobile menu button */}
+              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                <DisclosureButton className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-white/5 hover:text-white focus:outline-2 focus:-outline-offset-1 focus:outline-indigo-500">
+                  <span className="sr-only">Open main menu</span>
+                  {open ? (
+                    <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                  ) : (
+                    <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+                  )}
+                </DisclosureButton>
+              </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+              {/* Logo and desktop menu */}
+              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                <div className="flex shrink-0 items-center">
+                  <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+                    <Image
+                      src="/github-mark.png"
+                      alt="GitHub Logo"
+                    width={32}
+                    height={32}
+                    className="h-8 w-auto"
+                    />
+                  </a>
+                </div>
+
+                {/* Desktop links */}
+                <div className="hidden sm:ml-6 sm:block">
+                  <div className="flex space-x-4">
+                    {navigation.map((item) => (
+                      <Link
+                        key={item.name}
+                        to={item.href}
+                        className={classNames(
+                          location.pathname === item.href
+                            ? 'bg-gray-900 text-white dark:bg-gray-950/50'
+                            : 'text-gray-300 hover:bg-white/5 hover:text-white',
+                          'rounded-md px-3 py-2 text-sm font-medium'
+                        )}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* User icon */}
+              <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                <div className="relative flex rounded-full">
+                  <span className="sr-only">Open user menu</span>
+                  <img
+                    alt=""
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZBvXa_vFmcR82Aia3cVWwqsVKscEXrYVbuoNsnaZPIw&s"
+                    className="h-8 w-8 rounded-full bg-gray-800 outline outline-white/10"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile menu */}
+          <DisclosurePanel className="sm:hidden">
+            <div className="space-y-1 px-2 pt-2 pb-3">
+              {navigation.map((item) => (
+                <DisclosureButton
+                  key={item.name}
+                  as={Link}
+                  to={item.href}
+                  className={classNames(
+                    location.pathname === item.href
+                      ? 'bg-gray-900 text-white dark:bg-gray-950/50'
+                      : 'text-gray-300 hover:bg-white/5 hover:text-white',
+                    'block rounded-md px-3 py-2 text-base font-medium'
+                  )}
+                >
+                  {item.name}
+                </DisclosureButton>
+              ))}
+            </div>
+          </DisclosurePanel>
+        </>
+      )}
+    </Disclosure>
+  )
+}
+
+export default function App() {
+  return (
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<About />} />
+        <Route path="/description" element={<Description />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/qualifications" element={<Qualifications />} />
+      </Routes>
+    </Router>
+  )
 }
