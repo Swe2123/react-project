@@ -2,17 +2,13 @@
 
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom"
-import Image from 'next/image';
-
-// Your pages
-import About from '../pages/About.jsx'
-import Description from '../pages/Description.jsx'
-import Projects from '../pages/Projects.jsx'
-import Qualifications from '../pages/Qualifications.jsx'
+import Link from 'next/link'
+import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 
 const navigation = [
-  { name: 'About', href: '/' },
+  { name: 'Home', href: '/' },
+  { name: 'About', href: '/about' },  
   { name: 'Description', href: '/description' },
   { name: 'Projects', href: '/projects' },
   { name: 'Qualifications', href: '/qualifications' },
@@ -22,8 +18,8 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-function Navbar() {
-  const location = useLocation() 
+function Navbar() { 
+  const pathname = usePathname() 
 
   return (
     <Disclosure as="nav" className="relative bg-gray-800 dark:bg-gray-800/50 dark:after:pointer-events-none dark:after:absolute dark:after:inset-x-0 dark:after:bottom-0 dark:after:h-px dark:after:bg-white/10">
@@ -46,7 +42,7 @@ function Navbar() {
               {/* Logo and desktop menu */}
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex shrink-0 items-center">
-                  <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+                  <a href="https://github.com/Swe2123" target="_blank" rel="noopener noreferrer">
                     <Image
                       src="/github-mark.png"
                       alt="GitHub Logo"
@@ -63,9 +59,9 @@ function Navbar() {
                     {navigation.map((item) => (
                       <Link
                         key={item.name}
-                        to={item.href}
+                        href={item.href}
                         className={classNames(
-                          location.pathname === item.href
+                          pathname === item.href
                             ? 'bg-gray-900 text-white dark:bg-gray-950/50'
                             : 'text-gray-300 hover:bg-white/5 hover:text-white',
                           'rounded-md px-3 py-2 text-sm font-medium'
@@ -99,9 +95,9 @@ function Navbar() {
                 <DisclosureButton
                   key={item.name}
                   as={Link}
-                  to={item.href}
+                  href={item.href}
                   className={classNames(
-                    location.pathname === item.href
+                    pathname === item.href
                       ? 'bg-gray-900 text-white dark:bg-gray-950/50'
                       : 'text-gray-300 hover:bg-white/5 hover:text-white',
                     'block rounded-md px-3 py-2 text-base font-medium'
@@ -118,16 +114,11 @@ function Navbar() {
   )
 }
 
-export default function App() {
+export default function Home() {
   return (
-    <Router>
+    <div>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<About />} />
-        <Route path="/description" element={<Description />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/qualifications" element={<Qualifications />} />
-      </Routes>
-    </Router>
+      {/* Your home page content */}
+    </div>
   )
 }

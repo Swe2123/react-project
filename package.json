@@ -6,13 +6,20 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "lint:fix": "next lint --fix",
+    "format": "prettier --write .",
+    "docs": "jsdoc -c .jsdoc.conf.json",
+    "docs:serve": "npx http-server docs -p 8080 -o",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf .next out docs"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.8",
     "@heroicons/react": "^2.2.0",
     "@supabase/supabase-js": "^2.57.4",
     "@vis.gl/react-google-maps": "^1.5.5",
+    "critters": "^0.0.23",
     "framer-motion": "^12.23.12",
     "lucide-react": "^0.544.0",
     "next": "15.5.3",
