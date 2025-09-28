@@ -14,7 +14,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: linear-gradient(to right,#c960b6,#d400ff, rgb(56, 36, 71));
+    --background: linear-gradient(to right, #ffffff, #d400ff, rgb(56, 36, 71));
     --foreground: #ededed;
   }
 }
@@ -26,9 +26,8 @@ body {
 }
 
 .container {
-    font-size: 400%  ;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    user-select: none;
-    margin-top: 10px;
-    
+  font-size: 400%;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  user-select: none;
+  margin-top: 10px;
 }

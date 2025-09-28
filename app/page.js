@@ -1,28 +1,35 @@
-'use client'
+"use client";
 
-import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import Link from 'next/link'
-import Image from 'next/image'
-import { usePathname } from 'next/navigation'
+import {
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+} from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const navigation = [
-  { name: 'Home', href: '/' },
-  { name: 'About', href: '/about' },  
-  { name: 'Description', href: '/description' },
-  { name: 'Projects', href: '/projects' },
-  { name: 'Qualifications', href: '/qualifications' },
-]
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Description", href: "/description" },
+  { name: "Uses", href: "/uses" },
+  { name: "Qualifications", href: "/qualifications" },
+];
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
-function Navbar() { 
-  const pathname = usePathname() 
+function Navbar() {
+  const pathname = usePathname();
 
   return (
-    <Disclosure as="nav" className="relative bg-gray-800 dark:bg-gray-800/50 dark:after:pointer-events-none dark:after:absolute dark:after:inset-x-0 dark:after:bottom-0 dark:after:h-px dark:after:bg-white/10">
+    <Disclosure
+      as="nav"
+      className="relative bg-gray-800 dark:bg-gray-800/50 dark:after:pointer-events-none dark:after:absolute dark:after:inset-x-0 dark:after:bottom-0 dark:after:h-px dark:after:bg-white/10"
+    >
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -41,18 +48,6 @@ function Navbar() {
 
               {/* Logo and desktop menu */}
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                <div className="flex shrink-0 items-center">
-                  <a href="https://github.com/Swe2123" target="_blank" rel="noopener noreferrer">
-                    <Image
-                      src="/github-mark.png"
-                      alt="GitHub Logo"
-                    width={32}
-                    height={32}
-                    className="h-8 w-auto"
-                    />
-                  </a>
-                </div>
-
                 {/* Desktop links */}
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
@@ -62,9 +57,9 @@ function Navbar() {
                         href={item.href}
                         className={classNames(
                           pathname === item.href
-                            ? 'bg-gray-900 text-white dark:bg-gray-950/50'
-                            : 'text-gray-300 hover:bg-white/5 hover:text-white',
-                          'rounded-md px-3 py-2 text-sm font-medium'
+                            ? "bg-gray-900 text-white dark:bg-gray-950/50"
+                            : "text-gray-300 hover:bg-white/5 hover:text-white",
+                          "rounded-md px-3 py-2 text-sm font-medium",
                         )}
                       >
                         {item.name}
@@ -98,9 +93,9 @@ function Navbar() {
                   href={item.href}
                   className={classNames(
                     pathname === item.href
-                      ? 'bg-gray-900 text-white dark:bg-gray-950/50'
-                      : 'text-gray-300 hover:bg-white/5 hover:text-white',
-                    'block rounded-md px-3 py-2 text-base font-medium'
+                      ? "bg-gray-900 text-white dark:bg-gray-950/50"
+                      : "text-gray-300 hover:bg-white/5 hover:text-white",
+                    "block rounded-md px-3 py-2 text-base font-medium",
                   )}
                 >
                   {item.name}
@@ -111,14 +106,116 @@ function Navbar() {
         </>
       )}
     </Disclosure>
-  )
+  );
 }
 
 export default function Home() {
   return (
-    <div>
+    <div className="min-h-screen bg-white">
       <Navbar />
-      {/* Your home page content */}
+
+      <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
+        <h1 className="text-3xl font-bold text-black mb-8">Christie Payne</h1>
+
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {/* Introduction */}
+          <div className="border border-gray-200 p-4 hover:bg-gray-50 hover:border-gray-300 transition-all duration-200">
+            <h2 className="text-lg font-medium text-black mb-3">Hello</h2>
+            <p className="text-gray-700 text-sm">
+              I'm Christie Payne, a aspiring cybersecurity and game developer.
+            </p>
+          </div>
+
+          {/* What I Do */}
+          <div className="border border-gray-200 p-4 hover:bg-gray-50 hover:border-gray-300 transition-all duration-200">
+            <h2 className="text-lg font-medium text-black mb-3">What I Do</h2>
+            <p className="text-gray-700 text-sm">
+              2 years of programming through the courses code academy and cs50.
+              My current skills are fullstack web developer that specialises in
+              backend using django.
+            </p>
+          </div>
+
+          {/* Recent Work */}
+          <div className="border border-gray-200 p-4 hover:bg-gray-50 hover:border-gray-300 transition-all duration-200">
+            <h2 className="text-lg font-medium text-black mb-3">Recent Work</h2>
+            <p className="text-gray-700 text-sm mb-2">
+              This project, which is a next.js project using react and tailwind
+              and a financial application using c.
+            </p>
+          </div>
+
+          {/* Currently */}
+          <div className="border border-gray-200 p-4 hover:bg-gray-50 hover:border-gray-300 transition-all duration-200">
+            <h2 className="text-lg font-medium text-black mb-3">Currently</h2>
+            <p className="text-gray-700 text-sm">
+              Currently looking study and university and improve my skills and
+              broaden my knowledge within this field as a whole
+            </p>
+          </div>
+
+          {/* Contact */}
+          <div className="border border-gray-200 p-4 hover:bg-gray-50 hover:border-gray-300 transition-all duration-200">
+            <h2 className="text-lg font-medium text-black mb-3">Contact</h2>
+            <div className="space-y-1 text-sm">
+              <div>
+                <span className="text-gray-700">Email: </span>
+                <a
+                  href="mailto:[christiepaynr]@gmail.com"
+                  className="text-black underline"
+                >
+                  [christiepaynr]@gmail.com
+                </a>
+              </div>
+              <div>
+                <span className="text-gray-700">GitHub: </span>
+                <a
+                  href="https://github.com/[Swe213]"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-black underline"
+                >
+                  [Swe2123]
+                </a>
+              </div>
+              <div>
+                <span className="text-gray-700">YouTube: </span>
+                <a
+                  href="https://youtube.com/@[NoStringsAttached-f8n]"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-black underline"
+                >
+                  @[NoStringsAttached-f8n]
+                </a>
+              </div>
+              <div>
+                <span className="text-gray-700">LinkedIn: </span>
+                <a
+                  href="https://linkedin.com/in/[]"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-black underline"
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div className="border border-gray-200 p-4 hover:bg-gray-50 hover:border-gray-300 transition-all duration-200">
+            <h2 className="text-lg font-medium text-black mb-3">Quick Links</h2>
+            <div className="space-y-1 text-sm">
+              <a
+                href="/resume.pdf"
+                download="[Your-Name]-Resume.pdf"
+                className="text-black underline"
+              >
+                Download resume
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
