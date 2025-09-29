@@ -1,4 +1,5 @@
-import Navbar from "@/components/navbar";
+import Navbar from "@/components/navbar"
+import PaginationArrows from "@/components/arrow"
 
 export default function Description() {
   return (
@@ -26,6 +27,8 @@ export default function Description() {
           </div>
         </div>
       </div>
+      
+      <PaginationArrows />
     </div>
   );
 }

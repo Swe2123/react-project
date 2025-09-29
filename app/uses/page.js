@@ -1,4 +1,5 @@
 import Navbar from "@/components/navbar";
+import PaginationArrows from "@/components/arrow"
 
 export default function Uses() {
   return (
@@ -47,6 +48,7 @@ export default function Uses() {
           </div>
         </div>
       </div>
+      <PaginationArrows  />
     </div>
   );
 }

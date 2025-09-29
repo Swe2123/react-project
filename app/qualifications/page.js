@@ -1,4 +1,5 @@
-import Navbar from "@/components/navbar";
+import Navbar from "@/components/navbar"
+import PaginationArrows from "@/components/arrow"
 
 export default function Qualifications() {
   return (
@@ -63,6 +64,7 @@ export default function Qualifications() {
           </div>
         </div>
       </div>
+      <PaginationArrows  />
     </div>
   );
 }

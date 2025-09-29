@@ -1,6 +1,8 @@
-import Navbar from "@/components/navbar";
+import Navbar from "@/components/navbar"
+import PaginationArrows from "@/components/arrow"
 
 export default function About() {
+  
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
@@ -11,24 +13,25 @@ export default function About() {
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           <div className="border border-gray-200 p-6 hover:bg-gray-50 hover:border-gray-300 transition-all duration-200">
             <p className="text-gray-700">
-              [Write a simple paragraph about yourself - who you are, what you
-              do]
+              
             </p>
           </div>
 
           <div className="border border-gray-200 p-6 hover:bg-gray-50 hover:border-gray-300 transition-all duration-200">
             <p className="text-gray-700">
-              [Another paragraph about your background or interests]
+            
             </p>
           </div>
 
           <div className="border border-gray-200 p-6 hover:bg-gray-50 hover:border-gray-300 transition-all duration-200">
             <p className="text-gray-700">
-              [Final paragraph about what you're working on or looking for]
+              
             </p>
           </div>
         </div>
       </div>
+      <PaginationArrows  />
     </div>
+    
   );
 }

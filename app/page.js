@@ -9,6 +9,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import PaginationArrows from "@/components/arrow";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -164,18 +165,18 @@ export default function Home() {
                   href="mailto:[christiepaynr]@gmail.com"
                   className="text-black underline"
                 >
-                  [christiepaynr]@gmail.com
+                  christiepaynr@gmail.com
                 </a>
               </div>
               <div>
                 <span className="text-gray-700">GitHub: </span>
                 <a
-                  href="https://github.com/[Swe213]"
+                  href="https://github.com/Swe2123"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-black underline"
                 >
-                  [Swe2123]
+                  Swe2123
                 </a>
               </div>
               <div>
@@ -186,7 +187,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="text-black underline"
                 >
-                  @[NoStringsAttached-f8n]
+                  @NoStringsAttached-f8n
                 </a>
               </div>
               <div>
@@ -216,6 +217,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <PaginationArrows />
     </div>
   );
 }
