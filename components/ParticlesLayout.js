@@ -4,7 +4,7 @@ import Particles from '@/components/Particles';
 
 export default function PrismLayout({ children }) {
     return (
-    <div className="relative min-h-screen bg-gradient-to-r from-fuchsia-500 to-cyan-500">
+    <div className="relative min-h-screen bg-gray-300">
       {/* Prism background */}
         <div className="absolute inset-0 z-0">
         <Particles

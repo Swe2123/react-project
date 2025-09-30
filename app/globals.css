@@ -127,3 +127,27 @@
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+@supports (backdrop-filter: blur(20px)) {
+  .navbar-blur {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+}
+
+.navbar-scroll-shadow {
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.navbar-scroll-shadow.scrolled {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
