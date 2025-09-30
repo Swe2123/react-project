@@ -14,7 +14,7 @@ export default function Qualifications() {
           {/* Enhanced heading */}
           <div className="mb-12">
             <h1 className="text-4xl font-bold text-black mb-2">Background</h1>
-            <div className="h-1 w-20 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"></div>
+            <div className="h-1 w-50 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"></div>
           </div>
 
           

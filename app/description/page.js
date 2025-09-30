@@ -13,7 +13,7 @@ export default function Description() {
         <div className="mx-auto max-w-2xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="mb-12"> 
         <h1 className="text-4xl font-bold text-black mb-8">What I Do</h1>
-        <div className="h-1 w-20 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"></div>
+        <div className="h-1 w-50 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"></div>
         </div> 
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
