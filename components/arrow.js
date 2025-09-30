@@ -31,7 +31,7 @@ const PaginationArrows = () => {
     };
 
     return (
-        <div className="flex text-black gap-1 items-center justify-end py-8">
+        <div className="fixed bottom-4 right-4 flex text-black gap-1 items-center z-50">
             <button 
                 onClick={handlePrev} 
                 disabled={currentIndex === 0}

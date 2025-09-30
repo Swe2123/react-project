@@ -1,9 +1,11 @@
 import Navbar from "@/components/navbar"
 import PaginationArrows from "@/components/arrow"
+import ParticlesLayout from "@/components/ParticlesLayout";
 
 export default function Description() {
   return (
     <div className="min-h-screen bg-white">
+        <ParticlesLayout>
       <Navbar />
 
       <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
@@ -27,8 +29,9 @@ export default function Description() {
           </div>
         </div>
       </div>
-      
+      s
       <PaginationArrows />
+      </ParticlesLayout>
     </div>
   );
 }
