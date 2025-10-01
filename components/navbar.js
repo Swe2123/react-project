@@ -14,7 +14,7 @@ const navigation = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Description", href: "/description" },
-  { name: "Projects", href: "/projects" },
+  { name: "Projects ", href: "/projects" },
   { name: "Qualifications", href: "/qualifications" },
 ];
 
@@ -28,7 +28,7 @@ export default function Navbar() {
   return (
     <Disclosure
       as="nav"
-      className="relative bg-gray-800 dark:bg-gray-800/50 dark:after:pointer-events-none dark:after:absolute dark:after:inset-x-0 dark:after:bottom-0 dark:after:h-px dark:after:bg-white/10"
+      className="relative bg-gray-800 dark:bg-gray-800/50 dark:after:pointer-events-none dark:after:absolute dark:after:inset-x-0 dark:after:bottom-0 dark:after:h-px dark:after:bg-white/10 select-none"
     >
       {({ open }) => (
         <>

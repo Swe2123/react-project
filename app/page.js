@@ -11,7 +11,7 @@ import { usePathname } from "next/navigation";
 import PaginationArrows from "@/components/arrow";
 import ParticlesLayout from '@/components/ParticlesLayout';
 import PageTransition from "@/components/PageTransition";
-import Fall from "@/components/Fall";
+import FallingText from '@/components/FallingText';
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -109,7 +109,7 @@ function Navbar() {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white select-none">
       <ParticlesLayout className="overflow-visible">
         <PageTransition className="overflow-visible">
           <div className="relative z-10">
@@ -121,11 +121,20 @@ export default function Home() {
               </div>
             </div>
 
-          <div className="flex items-center justify-center min-h-[5px] overflow-visible">
+          
+          <div className="flex items-center justify-center min-h-[100px] overflow-visible">
             <div className="cursor-pointer transition-all hover:scale-105">
-            <Fall>
-              <h2 className="text-3xl font-bold text-black mb-2">Junior Full-Stack Developer</h2>
-            </Fall>
+                <FallingText
+                  text={`Junior Fullstack Developer that specialises in React and Django`}
+                  highlightWords={["React", "Bits", "animated", "components", "simplify"]}
+                  highlightClass="highlighted"
+                  trigger="auto"
+                  backgroundColor="transparent"
+                  wireframes={false}
+                  gravity={0.56}
+                  fontSize="2rem"
+                  mouseConstraintStiffness={0.9} 
+                />
           </div>
             <PaginationArrows />
           </div>
