@@ -5,7 +5,7 @@ import PageTransition from "@/components/PageTransition";
 
 export default function Qualifications() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white select-none">
       <ParticlesLayout>
         <PageTransition>
         <Navbar />

@@ -6,7 +6,7 @@ import PageTransition from "@/components/PageTransition";
 export default function About() {
   
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white select-none" >
           <ParticlesLayout>
             <PageTransition>
             <div className="relative z-10">

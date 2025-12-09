@@ -11,7 +11,7 @@ const PaginationArrows = () => {
         { path: "/", name: "Home" },
         { path: "/about", name: "About" },
         { path: "/description", name: "Description" },
-        { path: "/uses", name: "Uses" },
+        { path: "/projects", name: "Projects" },
         { path: "/qualifications", name: "Qualifications" },
     ];
 
