@@ -117,7 +117,7 @@ export default function Home() {
 
             <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
               <div className="mb-12 flex items-center justify-center "> 
-                <h1 className="text-8xl font-bold text-black mb-2 ">Christie Payne</h1>
+                <h1 className="text-8xl font-bold text-black mb-2 rad">Christie Payne</h1>
               </div>
             </div>
 

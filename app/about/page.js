@@ -25,7 +25,7 @@ export default function About() {
                     <div className="relative z-10">
                       <h2 className="text-lg font-semibold text-black mb-3">Hello</h2>
                       <p className="text-gray-700 text-sm">
-                        I'm Christie Payne, an aspiring cybersecurity and game developer.
+                        I&apos;m Christie Payne, an aspiring cybersecurity and game developer.
                       </p>
                     </div>
                   </div>
