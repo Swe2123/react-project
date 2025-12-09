@@ -1,3 +1,9 @@
+﻿/**
+ * Module: app/projects/page.js
+ *
+ * @module app/projects/page.js
+ */
+
 import Navbar from "@/components/navbar";
 import PaginationArrows from "@/components/arrow"
 import ParticlesLayout from "@/components/ParticlesLayout";
@@ -232,7 +238,7 @@ export default async function Projects() {
                           ))}
                           {project.stars > 0 && (
                             <span className="ml-auto text-xs text-gray-500 flex items-center gap-1">
-                              ⭐ {project.stars}
+                             {project.stars}
                             </span>
                           )}
                         </div>

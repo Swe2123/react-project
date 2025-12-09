@@ -2,6 +2,8 @@
 
 import { useRouter, usePathname } from "next/navigation";
 
+// arrows used to page across the site, mostly used for mobile access
+
 const PaginationArrows = () => {
     const router = useRouter();
     const pathname = usePathname();

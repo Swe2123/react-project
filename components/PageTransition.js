@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
-
+// creates a page transition effect using framer-motion
 export default function PageTransition({ children }) {
     const pathname = usePathname();
 

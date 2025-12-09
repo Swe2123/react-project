@@ -1,3 +1,9 @@
+﻿/**
+ * Module: app/page.js
+ *
+ * @module app/page.js
+ */
+
 "use client";
 
 import {
@@ -11,7 +17,7 @@ import { usePathname } from "next/navigation";
 import PaginationArrows from "@/components/arrow";
 import ParticlesLayout from '@/components/ParticlesLayout';
 import PageTransition from "@/components/PageTransition";
-import FallingText from '@/components/FallingText';
+
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -123,21 +129,18 @@ export default function Home() {
 
           
           <div className="flex items-center justify-center min-h-[100px] overflow-visible">
-            <div className="cursor-pointer transition-all hover:scale-105">
-                <FallingText
-                  text={`Junior Fullstack Developer that specialises in React and Django`}
-                  highlightWords={["React", "Bits", "animated", "components", "simplify"]}
-                  highlightClass="highlighted"
-                  trigger="auto"
-                  backgroundColor="transparent"
-                  wireframes={false}
-                  gravity={0.56}
-                  fontSize="2rem"
-                  mouseConstraintStiffness={0.9} 
-                />
+            <div className="text-2xl text-gray-700">
+                  Junior Fullstack Developer that specialises in{' '}
+                  <span className="text-3xl font-bold bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
+                    React
+                  </span>{' '}
+                  and{' '}
+                  <span className="text-3xl font-bold bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent">
+                    Django
+                  </span>
+                </div>
           </div>
             <PaginationArrows />
-          </div>
           </div>
         </PageTransition>
       </ParticlesLayout>

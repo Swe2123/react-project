@@ -1,3 +1,9 @@
+﻿/**
+ * Module: app/layout.js
+ *
+ * @module app/layout.js
+ */
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import PrismLayout from "@/components/PrismLayout";
@@ -28,3 +34,4 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+

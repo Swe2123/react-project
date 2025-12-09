@@ -1,3 +1,9 @@
+﻿/**
+ * Module: app/description/page.js
+ *
+ * @module app/description/page.js
+ */
+
 import Navbar from "@/components/navbar"
 import PaginationArrows from "@/components/arrow"
 import ParticlesLayout from "@/components/ParticlesLayout";
